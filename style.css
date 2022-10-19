@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  touch-action: none;
+}
+
+.fp-watermark {
+  display: none;
+}
+
+h1 {
+  font-family: "Lato";
+  font-size: 32px;
+  font-weight: 400;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100%;
+}
+
+p {
+  font-family: "Montserrat";
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100%;
+}
+
+.cursor {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  cursor: none;
+  /*transition:transform 50ms ease-out;*/
+  z-index: 999999;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 100%;
+  /*transition: 0.1s ease-in-out;*/
+}
+
+.follower {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  cursor: none;
+  /*transition:transform 100ms ease-out;*/
+  z-index: 999998;
+}
+
+.follower-circle {
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: #fff 1px solid;
+  transition: width 200ms ease-out, height 200ms ease-out;
+}
+.follower-circle--scale {
+  border: #fff 2px solid;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+}
+
+/* nav header links */
+.nav-brand {
+  position: fixed;
+  left: 0;
+  z-index: 600;
+  padding: 10px;
+}
+
+.nav-brand img {
+  width: 180px;
+}
+
+.fa-bars {
+  display: none !important;
+}
+
+.header-links {
+  position: fixed;
+  background-color: #000;
+  width: 100%;
+  z-index: 500;
+}
+
+.header-links li {
+  color: white;
+  display: inline;
+  float: right;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.header-links a {
+  color: #757575;
+  text-decoration: none;
+  font-family: "Montserrat";
+  -webkit-transition: all 0.2s ease-in;
+}
+
+.header-links a:hover {
+  color: #fdda0d !important;
+}
+#fp-nav ul li .fp-tooltip {
+  color: #5f5f5f !important;
+}
+
+/* Expanding border effect */
+
+.header-links a::after {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  content: "";
+  opacity: 0;
+  -webkit-transition: width 0.6s, opacity 0.8s;
+  -moz-transition: width 0.6s, opacity 0.8s;
+  transition: width 0.6s, opacity 0.8s;
+}
+
+.header-links a:hover::after,
+.header-links a:focus::after {
+  opacity: 1;
+  width: 100%;
+}
+
+/* main header section */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.opaque-bg {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 380px;
+  padding: 1px 1px 5px 5px;
+}
+
+.cover {
+  background: url("img/BG.png") no-repeat;
+  background-size: cover;
+
+  font-family: "Lato";
+  text-align: center;
+  overflow: hidden;
+  /* padding-top: 25%; */
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* about me */
+.aboutme {
+  overflow: hidden;
+  background: rgb(235, 235, 235);
+}
+
+.reach-out {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: hidden;
+}
+
+.reach-out li {
+  display: inline;
+  text-decoration: none;
+  word-wrap: break-word;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.reach-out li span {
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+.reach-out li a:hover,
+.reach-out li a:visited,
+.reach-out li a:link,
+.reach-out li a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+.SkillSet {
+  position: relative;
+  height: 35vh;
+  width: 100%;
+}
+
+/* Skill card */
+.CardContainer {
+  position: absolute;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  /* display:z */
+  height: 300px;
+  width: 220px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+  box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.6),
+    inset 6px 6px 20px rgba(0, 0, 0, 0.075);
+
+  transition: 0.4s ease-out;
+  position: relative;
+}
+
+.card img {
+  padding-top: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  max-width: 100%;
+  height: auto;
+}
+.card p {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: rgb(99, 99, 99);
+}
+
+.card:not(:first-child) {
+  margin-left: 2vw;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: rgb(235, 235, 235);
+  box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+    6px 6px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  font-family: "Montserrat";
+  text-align: center;
+  color: rgb(70, 70, 70);
+  font-weight: 300;
+  position: relative;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+
+.button {
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 250px;
+  height: 60px;
+
+  color: #000;
+  background-color: #fff;
+  border: none;
+
+  border-radius: 45px;
+  background-color: rgb(235, 235, 235);
+  /* box-shadow: -6px -6px 20px rgba(255,255,255,1),
+				6px 6px 20px rgba(0,0,0,0.1); */
+  transition: 0.4s ease-out;
+}
+
+.button:hover {
+}
+/* end of about me */
+
+/* Art Gallery */
+.arts {
+  background: rgb(0, 0, 0);
+}
+
+.grid-wrapper > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-wrapper > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.grid-wrapper {
+  position: relative;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  height: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-auto-rows: 240px;
+	grid-auto-flow: dense;
+}
+.grid-wrapper .wide {
+  grid-column: span 2;
+}
+.grid-wrapper .tall {
+  grid-row: span 2;
+}
+.grid-wrapper .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* .grid-wrapper> div:hover {
+  scale: 1.15;
+  transition: 0.4s ease-out;
+} */
+
+/* @media screen and (min-width: 900px) {
+  article {
+    padding: 1rem 3rem;
+  }
+} */
