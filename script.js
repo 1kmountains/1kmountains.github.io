@@ -23,7 +23,9 @@ window.addEventListener('mousemove', (event) => {
 })
 
 window.addEventListener('click', (event) => {
-  ExpendParticles()
+  ExpendParticles();
+  const newChar =  new Character();
+  chars.push(newChar);
 })
 
 window.addEventListener('resize', (event) => {
@@ -385,8 +387,8 @@ function setup() {
 
 
 function mousePressed() {
-  const newChar =  new Character();
-  chars.push(newChar);
+  // const newChar =  new Character();
+  // chars.push(newChar);
 }
 
 // --------------------------------------------------------------------
