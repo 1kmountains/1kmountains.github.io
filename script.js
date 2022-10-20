@@ -340,7 +340,6 @@ function preload() {
   char = loadImage('img/char/ghost/idle.png');
 }
 
-frameRate(30);
 function setup() {
   var myCanvas = createCanvas(windowWidth - 5, windowHeight - 5);
   myCanvas.parent('absCanvas');
@@ -350,6 +349,9 @@ function setup() {
   mass = 100; 
   
   accel = mass * 0.1; 
+
+  // char = new Image();
+  // char.src = "img/char/ghost/idle.png";
 }
 
 function draw() {
@@ -364,7 +366,11 @@ function draw() {
     velocity *= -0.6;
     yVal = height - mass/2;
   }
-  image(img, width/2, yVal);
+
+  ctx.clearRect(0, 0, width, height);
+  ctx.drawImage(img.elt, 0, 0);
+
+  image(char, 10, yVal);
 }
 
 
