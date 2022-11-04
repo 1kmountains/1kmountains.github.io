@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
+
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
@@ -36,14 +37,15 @@ window.addEventListener('click', (event) => {
 })
 
 window.addEventListener('resize', (event) => {
-  resize()
+  MyWindowResized();
+  p5jsWindowResized();
 })
 
 var img = new Image()
 img.onload = doSomething
 function doSomething() {
   ctx.drawImage(img, 0, 0, particleRefImgSize, particleRefImgSize)
-  init()
+  initCover();
 }
 
 img.src =
@@ -170,7 +172,7 @@ window.addEventListener('load', function () {
   animate()
 })
 
-function resize() {
+function MyWindowResized() {
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
   particleDist = window.window.innerHeight / 180
@@ -203,7 +205,7 @@ function lerpRGB(color1, color2, t) {
   return color
 }
 
-function init() {
+function initCover() {
   const textCoordinates = ctx.getImageData(
     0,
     0,
@@ -252,12 +254,12 @@ function animate() {
     particles[i].draw()
     particles[i].update()
   }
-  connect()
+  ConnectDots()
   requestAnimationFrame(animate)
 }
 animate()
 
-function connect() {
+function ConnectDots() {
   for (let i = 0; i < particles.length; i++) {
     for (let j = 0; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x
@@ -286,13 +288,15 @@ function connect() {
 
 // initiate full page scroll
 $('#fullpage').fullpage({
-  scrollBar: true,
-  responsiveWidth: 400,
+  // scrollBar: true,
+  scrollOverflow: true,
+  responsiveHeight: 600,
   navigation: true,
   navigationTooltips: ['cover', 'about', 'portfolio', 'contact', 'connect'],
   anchors: ['home', 'about', 'portfolio', 'contact', 'connect'],
   menu: '#myMenu',
   fitToSection: false,
+  lockAnchors: true,
 
   afterLoad: function (anchorLink, index) {
     var loadedSection = $(this)
@@ -315,7 +319,7 @@ $('#fullpage').fullpage({
     // }
 
     // using index
-    if (index == 2) {
+    if (index == 3) {
       /* animate skill bars */
       new WOW().init();
     }
@@ -344,10 +348,11 @@ var isDragging = false;
 let ms;
 var idle1, idle2, idle3, idle4;
 var walk1, walk2, walk3, walk4;
+var myP5jsCanvas;
 
 function setup() {
-  var myCanvas = createCanvas(windowWidth - 5, windowHeight - 5);
-  myCanvas.parent('absCanvas');
+  myP5jsCanvas = createCanvas(windowWidth, windowHeight);
+  myP5jsCanvas.parent('absCanvas');
   imageMode(CENTER);
   
   yVal = 0;  
@@ -419,6 +424,11 @@ function setup() {
           else
             this.x -= this.speed;
         }
+
+        if(this.x >= windowWidth - 30)
+            this.x = windowWidth - 30;
+        if(this.x <= 30)
+          this.x = 30;
 
         if(ms - this.startTimer > this.WaitOutTime) 
         {
@@ -525,4 +535,77 @@ function touchEnded()
   }
 }
 
+function p5jsWindowResized()
+{
+  resizeCanvas(windowWidth, windowHeight); 
+}
+
+
 // --------------------------------------------------------------------
+let hero = document.getElementById('hero');
+let slides = document.getElementById('slis');
+let next = [ 'next', 'next-catch' ].map(n => document.getElementById(n));
+let prev = [ 'prev', 'prev-catch' ].map(n => document.getElementById(n));
+let slideChildren = slides.children;
+let slideCount = slides.children.length;
+let currentlyDemoing = false;
+let currentPage = 0;
+let maxPageCount = () => slideCount;
+
+function goToPage(pageNumber = 0) {
+	currentPage = Math.min(maxPageCount() - 1, Math.max(0, pageNumber));
+	console.log(currentPage);
+	hero.style.setProperty('--page', currentPage);
+}
+
+function sleep(time) {
+	return new Promise(res => setTimeout(res, time));
+}
+
+function hoverSlide(index) {
+	index in slideChildren &&
+		slideChildren[index].classList.add('hover');
+}
+
+function unhoverSlide(index) {
+	index in slideChildren &&
+		slideChildren[index].classList.remove('hover');
+}
+
+async function demo() {
+	if(currentlyDemoing) {
+		return;
+	}
+	currentlyDemoing = true;
+	if(currentPage !== 0) {
+		goToPage(0);
+		await sleep(800);
+	}
+	let pageSeq_ = { 2: [ 1, 2, 1 ], 3: [ 1, 2, 1 / 3 ], 4: [ 1, 1, 0 ] };
+	let pageSeq = pageSeq_[slides] || pageSeq_[4];
+	let slideSeq_ = { 2: [ 2, 4, 3 ], 3: [ 3, 6, 2 ], 4: [ 3, 6, 2 ] };
+	let slideSeq = slideSeq_[slides] || slideSeq_[2];
+	await sleep(300);
+	goToPage(pageSeq[0]);
+	await sleep(500);
+	hoverSlide(slideSeq[0]);
+	await sleep(1200);
+	goToPage(pageSeq[1]);
+	unhoverSlide(slideSeq[0]);
+	await sleep(500);
+	hoverSlide(slideSeq[1]);
+	await sleep(1200);
+	goToPage(pageSeq[2]);
+	unhoverSlide(slideSeq[1]);
+	await sleep(300);
+	hoverSlide(slideSeq[2]);
+	await sleep(1600);
+	goToPage(0);
+	unhoverSlide(slideSeq[2]);
+	currentlyDemoing = false;
+}
+
+next.forEach(n => n.addEventListener('click', () => !currentlyDemoing && goToPage(currentPage + 1)));
+prev.forEach(n => n.addEventListener('click', () => !currentlyDemoing && goToPage(currentPage - 1)));
+
+sleep(100).then(demo);

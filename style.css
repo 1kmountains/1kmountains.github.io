@@ -312,7 +312,9 @@ canvas {
 
 /* Art Gallery */
 .arts {
-  background: rgb(0, 0, 0);
+  /* direction: ltr; */
+  background: url("img/BG.png");
+  padding-top: 100px;
 }
 
 .grid-wrapper > div {
@@ -332,8 +334,9 @@ canvas {
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 200px;
   grid-auto-rows: 240px;
 	grid-auto-flow: dense;
 }
@@ -344,8 +347,16 @@ canvas {
 .grid-wrapper .tall {
   grid-row: span 2;
 }
+.grid-wrapper .bigtall {
+  grid-column: span 2;
+  grid-row: span 3;
+}
 .grid-wrapper .big {
   grid-column: span 2;
+  grid-row: span 2;
+}
+.grid-wrapper .bigwide {
+  grid-column: span 3;
   grid-row: span 2;
 }
 
@@ -359,3 +370,203 @@ canvas {
     padding: 1rem 3rem;
   }
 } */
+
+/* -------------------------------------------------------------------------------- */
+.works {
+  overflow: hidden;
+  background: url("img/BG.png");
+  background-size: cover;
+  color: #fff;
+  padding-top: 100px;
+  width: auto;
+}
+
+.WorkCardsContainer
+{
+  --page: 0;
+  width: auto;
+}
+
+.MySlides {
+  display: inline-block;
+  z-index: 0;
+  width: auto;
+  height: 76vh;
+  padding: 0 10vw;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transform: translate3D(calc(var(--page) * (-25vw - 5vw)), 0, 0);
+  transition: 1500ms transform cubic-bezier(0.7, 0, 0.3, 1); 
+}
+
+.MySlide {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.5vw;
+  width: 25vw;
+  height: 70vh;
+  
+  margin: 0 1.333em;
+  background: hsl(210, 23%, 8%);
+  color: white;
+  background-size: cover;
+  background-position: center;
+  white-space: normal;
+  word-break: break-word;
+  position: relative;
+}
+
+.slideBG {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: left;
+}
+
+ .slideOverlay {
+  position: absolute;
+  background: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 12px;
+  z-index: 1;
+  background: linear-gradient(#ffffff00, #0a0a13e3);
+}
+
+.MySlide .body {
+  padding-top:  3vh;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  color:rgba(255, 255, 255, 0.45);
+  text-shadow: 0px 0px 8px #cececec9;
+}
+
+.MySlide .slideNum {
+  padding-left: 1vw;
+  opacity: 1;
+  z-index: 2;
+  font-family: "Lato";
+  font-size: 0.6em;
+  font-weight: 0.5;
+}
+.MySlide .slideEvent {
+  opacity: 0;
+  z-index: 2;
+  font-family: "Lato";
+  font-size: 0.8em;
+  font-weight: 1;
+}
+.MySlide .slideTitle {
+  opacity: 1;
+  z-index: 10;
+  font-family: "Lato";
+  font-size: 3em;
+  font-weight: 900;
+}
+
+.MySlide .slideDescription {
+  z-index: 2;
+  font-family: "Lato";
+  font-size: 0.8em;
+  font-weight: 100;
+  line-height: 1.6em;
+  position: absolute;
+  padding-right: 1vw;
+  bottom: 2em;
+  opacity: 0;
+}
+
+
+.MySlide:hover {
+  width: 70vw;
+  transition: 0.4s ease-out;
+}
+
+.MySlide:hover .slideOverlay {
+  opacity: 1;
+  transition: 0.4s ease-out;
+}
+
+.MySlide:hover .slideDescription {
+  opacity: 1;
+  transition: 0.4s ease-out;
+}
+
+.MySlide:hover .slideTitle {
+  opacity: 1;
+  transform: translateY(2vh);
+  transition: 0.4s ease-out;
+}
+
+.MySlide:hover .slideEvent {
+  opacity: 1;
+  transform: translateY(3vh);
+  transition: 0.4s ease-out;
+  transition-delay:0.3s;
+}
+
+.MySlide:hover .slideBG {
+  transition: 0.4s ease-out;
+  /* filter: saturate(80%); */
+}
+
+.MySlide:hover .body {
+  height: 100%;
+  vertical-align: center;
+  opacity: 1 !important;
+  color:rgb(255, 255, 255) !important;
+  text-shadow: 0px 0px 10px #000000c5;
+  transition: 0.8s ease-out;
+}
+
+.slidebuttons
+{
+  position: absolute;
+  left: 5vw;
+  top: 50%;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slideLink
+{
+  padding: 15px 0;
+  min-width: 150px;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+/* -------------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fdda0d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f8cd0d;
+}
