@@ -372,7 +372,7 @@ canvas {
 } */
 
 /* -------------------------------------------------------------------------------- */
-.works {
+.GameJams {
   overflow: hidden;
   background: url("img/BG.png");
   background-size: cover;
@@ -389,7 +389,6 @@ canvas {
 
 .MySlides {
   display: inline-block;
-  z-index: 0;
   width: auto;
   height: 76vh;
   padding: 0 10vw;
@@ -406,7 +405,7 @@ canvas {
   vertical-align: top;
   font-size: 1.5vw;
   width: 25vw;
-  height: 70vh;
+  height: 40vw;
   
   margin: 0 1.333em;
   background: hsl(210, 23%, 8%);
@@ -416,6 +415,9 @@ canvas {
   white-space: normal;
   word-break: break-word;
   position: relative;
+
+  transition: 0.4s ease-out;
+  transition-delay:0.3s;
 }
 
 .slideBG {
@@ -444,6 +446,7 @@ canvas {
   padding-left: 1vw;
   color:rgba(255, 255, 255, 0.45);
   text-shadow: 0px 0px 8px #cececec9;
+  transition: 0.4s ease-out;
 }
 
 .MySlide .slideNum {
@@ -451,8 +454,9 @@ canvas {
   opacity: 1;
   z-index: 2;
   font-family: "Lato";
-  font-size: 0.6em;
+  font-size: 0.7em;
   font-weight: 0.5;
+  transition: 0.4s ease-out;
 }
 .MySlide .slideEvent {
   opacity: 0;
@@ -460,85 +464,133 @@ canvas {
   font-family: "Lato";
   font-size: 0.8em;
   font-weight: 1;
+  transition: 0.4s ease-out;
 }
 .MySlide .slideTitle {
   opacity: 1;
   z-index: 10;
   font-family: "Lato";
-  font-size: 3em;
+  font-size: 1em;
   font-weight: 900;
+  transition: 0.4s ease-out;
 }
 
 .MySlide .slideDescription {
   z-index: 2;
   font-family: "Lato";
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-weight: 100;
-  line-height: 1.6em;
+  line-height: 1.8em;
   position: absolute;
   padding-right: 1vw;
   bottom: 2em;
   opacity: 0;
+  transition: 0.4s ease-out;
+
+  letter-spacing: .05em;
 }
 
-
-.MySlide:hover {
-  width: 70vw;
+.MySlide.focus {
+  width: 75vw;
   transition: 0.4s ease-out;
 }
 
-.MySlide:hover .slideOverlay {
+.MySlide.focus .slideOverlay {
+  opacity: 0;
+  transition: 0.4s ease-out;
+}
+
+.MySlide.focus:hover .slideOverlay {
+  opacity: 1;
+  background: linear-gradient(#0a0a13cb, #0a0a13e3);
+  transition: 0.4s ease-out;
+}
+
+.MySlide.focus:hover .slideDescription {
   opacity: 1;
   transition: 0.4s ease-out;
 }
 
-.MySlide:hover .slideDescription {
-  opacity: 1;
-  transition: 0.4s ease-out;
-}
-
-.MySlide:hover .slideTitle {
+.MySlide.focus .slideTitle {
   opacity: 1;
   transform: translateY(2vh);
+  font-size: 2.5em;
+
   transition: 0.4s ease-out;
 }
 
-.MySlide:hover .slideEvent {
+.MySlide.focus .slideEvent {
   opacity: 1;
   transform: translateY(3vh);
   transition: 0.4s ease-out;
   transition-delay:0.3s;
 }
 
-.MySlide:hover .slideBG {
+.MySlide.focus .slideBG {
   transition: 0.4s ease-out;
   /* filter: saturate(80%); */
 }
 
-.MySlide:hover .body {
+.MySlide.focus .body {
   height: 100%;
   vertical-align: center;
   opacity: 1 !important;
   color:rgb(255, 255, 255) !important;
-  text-shadow: 0px 0px 10px #000000c5;
+  text-shadow: 0px 0px 12px #000000e7 !important;
   transition: 0.8s ease-out;
 }
 
 .slidebuttons
 {
-  position: absolute;
-  left: 5vw;
-  top: 50%;
-  z-index: 100;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
+.slidebutton_left
+{
+  position: absolute;
+  left: 3vw;
+  top: 50%;
+  z-index: 100;
+
+  width: 8vh;
+  height: 8vh;
+
+  background-size: contain;
+  border: none;
+  background-image: url('img/Works/Left.png');
+
+  transform: scale(1);
+	animation: pulse 2s infinite;
+
+  cursor: pointer;
+}
+
+.slidebutton_right
+{
+  position: absolute;
+  right: 4vw;
+  top: 50%;
+  z-index: 100;
+
+  width: 8vh;
+  height: 8vh;
+
+  background-size: contain;
+  border: none;
+  background-image: url('img/Works/Right.png');
+
+  transform: scale(1);
+	animation: pulse 2s infinite;
+
+  cursor: pointer;
+}
+
 .slideLink
 {
+  font-family: "Lato";
   padding: 15px 0;
   min-width: 150px;
   border-radius: 30px;
@@ -547,8 +599,29 @@ canvas {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: .2em;
+  letter-spacing: .15em;
 }
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.5))
+	}
+
+	70% {
+		transform: scale(1);
+		-webkit-filter: drop-shadow(0px 0px 8px rgb(255, 255, 255, 0.75));
+    filter: drop-shadow(0px 0px 8px rgb(255, 255, 255, 0.75))
+	}
+
+	100% {
+		transform: scale(0.95);
+		-webkit-filter: drop-shadow(0px 0px 3px rgb(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 3px rgb(255, 255, 255, 0.5))
+	}
+}
+
 /* -------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {

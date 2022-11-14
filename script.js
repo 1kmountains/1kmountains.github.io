@@ -41,6 +41,11 @@ window.addEventListener('resize', (event) => {
   p5jsWindowResized();
 })
 
+function windowResized()
+{
+  p5jsWindowResized();
+}
+
 var img = new Image()
 img.onload = doSomething
 function doSomething() {
@@ -556,6 +561,11 @@ function goToPage(pageNumber = 0) {
 	currentPage = Math.min(maxPageCount() - 1, Math.max(0, pageNumber));
 	console.log(currentPage);
 	hero.style.setProperty('--page', currentPage);
+  hero.style.setProperty('vertical-align', "middle");
+
+  slideChildren.forEach(n => n != slideChildren[currentPage]? n.classList.remove('focus'): null);
+  pageNumber in slideChildren &&
+		slideChildren[pageNumber].classList.add('focus');
 }
 
 function sleep(time) {
@@ -564,12 +574,12 @@ function sleep(time) {
 
 function hoverSlide(index) {
 	index in slideChildren &&
-		slideChildren[index].classList.add('hover');
+		slideChildren[index].classList.add('focus');
 }
 
 function unhoverSlide(index) {
 	index in slideChildren &&
-		slideChildren[index].classList.remove('hover');
+		slideChildren[index].classList.remove('focus');
 }
 
 async function demo() {
@@ -585,6 +595,7 @@ async function demo() {
 	let pageSeq = pageSeq_[slides] || pageSeq_[4];
 	let slideSeq_ = { 2: [ 2, 4, 3 ], 3: [ 3, 6, 2 ], 4: [ 3, 6, 2 ] };
 	let slideSeq = slideSeq_[slides] || slideSeq_[2];
+
 	await sleep(300);
 	goToPage(pageSeq[0]);
 	await sleep(500);
