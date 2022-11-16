@@ -6,8 +6,9 @@ canvas.height = window.innerHeight
 
 let particles = []
 console.log(window.innerWidth)
-let particleDist = window.innerHeight / 180
-let particleRefImgSize = 80
+let particleDist = window.innerHeight / 180  *  2
+let particleRefImgSize = 40
+let particlesLink = 1.4
 let adjustX = canvas.width / (particleDist * 2) - particleRefImgSize / 2
 let adjustY = canvas.height / (particleDist * 2) - particleRefImgSize / 2
 //  - canvas.height/(particleDist*2)/5
@@ -59,7 +60,7 @@ class Particle {
   constructor(x, y, _x, _y, col) {
     this._x = _x
     this._y = _y
-    this.size = 1.5
+    this.size = 2.5
     this.col = col
     this.defaultCol = col
     this.baseX = x
@@ -270,7 +271,7 @@ function ConnectDots() {
       const dx = particles[i].x - particles[j].x
       const dy = particles[i].y - particles[j].y
       const distance = Math.sqrt(dx * dx + dy * dy)
-      if (distance < particleDist * 1.6) {
+      if (distance < particleDist * particlesLink) {
         ctx.strokeStyle =
           'rgb(' +
           particles[i].col.r +
@@ -281,7 +282,7 @@ function ConnectDots() {
           ',' +
           particles[i].col.a +
           ')'
-        ctx.lineWidth = 0.3
+        ctx.lineWidth = 0.4
         ctx.beginPath()
         ctx.moveTo(particles[i].x, particles[i].y)
         ctx.lineTo(particles[j].x, particles[j].y)
