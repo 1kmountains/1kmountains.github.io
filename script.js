@@ -13,6 +13,8 @@ let adjustX = canvas.width / (particleDist * 2) - particleRefImgSize / 2
 let adjustY = canvas.height / (particleDist * 2) - particleRefImgSize / 2
 //  - canvas.height/(particleDist*2)/5
 
+let bFirstPage = true;
+
 const mouse = {
   x: null,
   y: null,
@@ -41,6 +43,12 @@ window.addEventListener('resize', (event) => {
   MyWindowResized();
   p5jsWindowResized();
 })
+
+addEventListener('fullscreenchange', (event) => { 
+  MyWindowResized();
+  p5jsWindowResized();
+});
+
 
 function windowResized()
 {
@@ -93,6 +101,8 @@ class Particle {
   }
 
   update() {
+    // if(!bFirstPage)
+    //   return;
     const dx = mouse.x - this.x
     const dy = mouse.y - this.y
     const distance = Math.sqrt(dx * dx + dy * dy)
@@ -170,6 +180,9 @@ window.addEventListener('load', function () {
     rainParticles[i] = new RainParticles()
   }
   function animate() {
+    if(!bFirstPage)
+    return;
+
     for (var i = 0; i < rainParticles.length; i++) {
       rainParticles[i].drop()
     }
@@ -298,8 +311,8 @@ $('#fullpage').fullpage({
   scrollOverflow: true,
   responsiveHeight: 600,
   navigation: true,
-  navigationTooltips: ['cover', 'about', 'portfolio', 'contact', 'connect'],
-  anchors: ['home', 'about', 'portfolio', 'contact', 'connect'],
+  navigationTooltips: ['home', 'about', 'arts', 'gamejams', 'projects'],
+  anchors: ['home', 'about', 'arts', 'gamejams', 'projects'],
   menu: '#myMenu',
   fitToSection: false,
   lockAnchors: true,
@@ -323,14 +336,33 @@ $('#fullpage').fullpage({
     //   });
     //   $(".header-links").css("background-color", "white");
     // }
-
+    
     // using index
     if (index == 3) {
       /* animate skill bars */
       new WOW().init();
     }
   },
+
+  onLeave: function(origin, destination, direction, trigger){
+		var leavingSection = this;
+
+		//after leaving section 2
+		if(origin.index == 1 && direction =='down'){
+			//Leaving First Page
+      bFirstPage = false;
+		}
+
+		else if(origin.index == 1 && direction == 'up'){
+			bFirstPage = true;
+		}
+	}
 })
+
+var Show = function(elID) {
+  fullpage_api.moveTo(elID);
+  fullpage_api.responsiveSlides.toSlides();
+ }
 
 //Mouse
 $(document).on('mousemove', function (e) {

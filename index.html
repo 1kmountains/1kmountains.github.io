@@ -40,12 +40,11 @@
       <i class="fa fa-bars fa-3x"></i>
       <div class="header-links">
         <ul>
-          <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
-          <li data-menuanchor="thirdPage"><a href="#arts">ARTS</a></li>
-          <li data-menuanchor="thirdPage">
-            <a href="#portfolio">PORTFOLIO</a>
-          </li>
-          <li data-menuanchor="secondPage"><a href="#aboutme">ABOUT</a></li>
+          <li data-menuanchor="fifthPage"><a onclick="Show(5)">PROJECTS</a></li>
+          <li data-menuanchor="fourthPage"><a onclick="Show(4)">GAME JAM</a></li>
+          <li data-menuanchor="thirdPage"><a onclick="Show(3)">ARTS</a></li>
+          <li data-menuanchor="secondPage"><a onclick="Show(2)">ABOUT</a></li>
+          <li data-menuanchor="firstPage"><a onclick="Show(1)">HOME</a></li>
         </ul>
       </div>
     </div>
@@ -121,7 +120,7 @@
                 width="35"
                 alt="Location icon"
                 style="vertical-align: middle"
-              /><span>jason.com</span>
+              /><span><a href="https://1kmountains.github.io/">1kmountains.github.io</a></span>
             </li>
             <li>
               <img
@@ -198,13 +197,14 @@
               </div>
             </div>
           </div>
-          <div class="button">Download Resume</div>
+          <!-- <div class="button">Download Resume</div> -->
         </div>
       </div>
       <!-- end section -->
 
       <!-- begin section -->
       <div class="section arts" data-anchor="arts">
+        <div class="ArtSection" style="padding-top: 20vh;">
           <h1 style="color: white">ARTS</h1>
           <br>
           <div class="grid-wrapper">
@@ -242,10 +242,12 @@
               <img src="img/arts/Girl2.jpg" alt="" />
             </div>
           </div>
+        </div>
       </div>
 
       <div class="section GameJams" data-anchor="gamejams" style="overflow: hidden;">
-          <h1>Game Jams</h1>
+          <h1>Game Jams</h1><br>
+          <p>For the past three 2 years, I have participated in variety of game jams working as an illustrator/ graphic designer. Here are some of the works. Hover for more details, hit "Play" to play in browser at <a href="https://1kmountains.itch.io/">1kmountains.itch.io</a></p>
           <div class="slidebuttons">
             <div class="slidebutton_right" id="next"></div>
             <div class="slidebutton_left" id="prev"></div>
@@ -268,9 +270,9 @@
                       </div>
                       
                       <div class="slideDescription">
-                        <button type="button" class="slideLink">Play</button>
-                        <br>
-                        Your witch grandma is dead, leaving you alone with an ancient sorcerer book. Create your own friends to fight against the holy armies! What will you create? A three head monster? 
+                        <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/necromancer-alone')">Play</button>
+                        <br><br>
+                        Your grandma was dead in a witch-hunt, leaving you an ancient sorcerer book. But you are not alone! With the book, you can create your own friends to fight against the holy armies! What will you create? A three head monster? 
                       </div>
                     </div>
                   </div>
@@ -286,8 +288,8 @@
                       </div>
                       
                       <div class="slideDescription">
-                        <button type="button" class="slideLink">Play</button>
-                        <br>
+                        <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/steamtown')">Play</button>
+                        <br><br>
                         A story-driven deck-building card game. Cards are generated randomly with different abilities. Players choose one side of the card to resolve while the opponent will resolve another side. Createing combos and limiting the damage taken are the key to success. 
                       </div>
                     </div>
@@ -298,15 +300,15 @@
                     <div class="slideBG" style="background-image: url('https://i.imgur.com/bCE3GcL.gif')">
                     <div class="slideOverlay"></div>
                     <div class="body">
-                      <div class="slideNum">#01</div>
+                      <div class="slideNum">#03</div>
                       <div class="slideTitle">Ghostly Delivery</div>
                       <div class="slideEvent">Brackeys Game Jam 2021.1
                       </div>
                       
                       <div class="slideDescription">
-                        <button type="button" class="slideLink">Play</button>
-                        <br>
-                        "Ghostly Delivery" is a RTS game that you need to control multiple ghost minions to deliver cargos to the city portal. We ranked at #146 out of #1888 entries (top 8%). As the artist of the game, I tried to use a pink-ish background to build up a delightful night city atmosphere.
+                        <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/ghostly-delivery')">Play</button>
+                        <br><br>
+                        "Ghostly Delivery" is a RTS game that you need to control multiple ghost minions to deliver cargos to the city portal. We ranked at #146 out of #1888 entries (top 8%). As the artist of the game, I tried to use a pink-ish background to build up a delightful dreamy night city atmosphere.
                       </div>
                     </div>
                   </div>
@@ -316,15 +318,15 @@
                     <div class="slideBG" style="background-image: url('https://i.imgur.com/FoZurhR.gif')">
                     <div class="slideOverlay"></div>
                     <div class="body">
-                      <div class="slideNum">#03</div>
+                      <div class="slideNum">#04</div>
                       <div class="slideTitle">Hungry Dice</div>
                       <div class="slideEvent">Global Game Jam 2022 Hong Kong
                       </div>
                       
                       <div class="slideDescription">
-                        <button type="button" class="slideLink">Play</button>
-                        <br>
-                        "Hungry Dice" is a strategy game that, where players need to awared that they also play cards for the enemy. Cards are generated randomly with different abilities. Createing combos and limit the damage taken are the key to success.
+                        <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/hungry-dice')">Play</button>
+                        <br><br>
+                        "Hungry Dice" is a strategy game where players is a dice rolling on the board. Rolling onto the floor button to trigger attack action, the strength of the skill are depends on the value of the dice rolled facing down.
                       </div>
                     </div>
                   </div>
@@ -334,14 +336,14 @@
                     <div class="slideBG" style="background-image: url('https://i.imgur.com/dZo0fTS.gif')">
                     <div class="slideOverlay"></div>
                     <div class="body">
-                      <div class="slideNum">#03</div>
+                      <div class="slideNum">#05</div>
                       <div class="slideTitle">Morning Star</div>
                       <div class="slideEvent">Brackeys Game Jam 2021.1</div>
                       
                       <div class="slideDescription">
-                        <button type="button" class="slideLink">Play</button>
-                        <br>
-                        Ghostly Delivery is a RTS game that you need to control multiple ghost minions to deliver cargos to the city portal. We ranked at #146 out of #1888 entries (top 8%).
+                        <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/morning-star')">Play</button>
+                        <br><br>
+                        "Morning Star" is a puzzle game that players need to You are Lucifier, the morning star. You are going to flood the world with chaos. 
                       </div>
                     </div>
                   </div>
@@ -349,7 +351,7 @@
 
                   
             </div>
-
+            
             <div id="next-catch"></div>
             <div id="prev-catch"></div>
           </div>
@@ -360,13 +362,181 @@
 
       <!-- end section -->
 
-      <div class="section contact" data-anchor="contact">
-        <div class="contact">
-          <h1>contact</h1>
-          <br>
+      <div class="section Projects" data-anchor="Projects">
+        <div class="ProjectsHolder">
+          <h1>Projects</h1><br>
+          <p>Here are the projects I have been participated in working as a Unity developer.</p>
+          
+          <div class = "Project">
+          <div class="Projects-Content">
+            <h1> <img src="img/inspekly-editor-icon.png" width="60" style="vertical-align: middle"> Inspekly Editor</h1> 
+            <br><br>
+            <p> Inspekly is a project to transform workforces with digital checklists, powered with augmented reality guidance and an in-door tagging system. I am in charge of creating an editor for visualising the area target, creating items and packing the data as a json file to upload.</p>
+            <br>
+            <p>To enhance the user experience, many UIUX solutions have been implemented in the project, such as Undo system, multiselection system, dynamic dropdown, etc. The project can be used on iOS, Android, PC and Win. </p>
+            <br>
+            <p> Find out more on <a href="https://www.inspekly.com/">www.inspekly.com</a>.</p>
+            <br>
+            <ul class="availableIn">
+              <li>
+                <span>Available in:</span>
+              </li>
+              <li>
+                <img
+                  src="img/Apple.png"
+                  width="35"
+                  style="vertical-align: middle"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/Android.png"
+                  width="35"
+                  style="vertical-align: middle"
+                />
+              </li>
+              <li>
+                <img
+                  src="img/PC.png"
+                  width="35"
+                  style="vertical-align: middle"
+                />
+              </li>
+            </ul>
+          </div>
+            <div class="video-mask1">
+              <iframe 
+              style="border-radius: 30px;
+              width: 30vw;
+              height: 17vw;"
+              src="https://www.youtube.com/embed/1Qylsy_74fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          </div>
+
+          <!--  -->
+          <div class = "Project">
+            <div class="video-mask2">
+                <iframe 
+                style="border-radius: 30px;
+                width: 15vw;
+                height: 31vw;"
+                src="https://player.vimeo.com/video/636958325?h=d11d61c240&byline=0&portrait=0#t=s" width="640" height="1385" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+            </div>
+
+            <div class="Projects-Content">
+              <h1>  <img src="img/FidelidadeARIcon.png" width="60" style="vertical-align: middle"> Fidelidade AR</h1>
+              <br><br>
+              <p>Fidelidade in Portugal is an insurance company that has recently trained an AI model to detect car damage for an insurance claim. For an accurate result of the AI detection, they need a solution to ensure the user can take a full 360 view of the car following regulations to prevent frauds.</p>
+              <br>
+              <p>Hence, we leverage the AR technology to create a walkthrough for video taking. The project was created in Unity using ARFoundation, built as an SDK plugin for their application. During the walkthrough, distance between the car and the user, camera angle, camera movement are constantly tracked. Unuseful clips will also be trimmed out in real time.  </p>
+              <br>
+              <ul class="availableIn">
+                <li>
+                  <span>Available in:</span>
+                </li>
+                <li>
+                  <img
+                    src="img/Apple.png"
+                    width="35"
+                    style="vertical-align: middle"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="img/Android.png"
+                    width="35"
+                    style="vertical-align: middle"
+                  />
+                </li>
+              </ul>
+            </div>
+            </div>
+
+            <!--  -->
+            <div class = "Project">
+              <div class="Projects-Content">
+                <h1> <img src="img/CasinoRewardingApp.png" width="60" style="vertical-align: middle"> Casino AR Wayfinding</h1> 
+                <br><br>
+                <p>“Casino AR Wayfinding” is an AR application that features wayfinding with a little gaming along the way. The goal is to show players around the Casino and send out rewards at the end.</p>
+                <br>
+                <p>The purple fish narrator shows up when you start the apps, introducing the gameplay with voice over. Then, he will guide you to the first ponds using the NavMesh with Vuforia Area Target tracking in Unity. When you have reached the pond, players can play a little fishing game. After finishing the game, players will be guided to the player desk to redeem rewards.                </p>
+                <br>
+                <ul class="availableIn">
+                  <li>
+                    <span>Available in:</span>
+                  </li>
+                  <li>
+                    <img
+                      src="img/Apple.png"
+                      width="35"
+                      style="vertical-align: middle"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="img/Android.png"
+                      width="35"
+                      style="vertical-align: middle"
+                    />
+                  </li>
+                </ul>
+              </div>
+                <div class="video-mask1">
+                  <iframe
+                  style="border-radius: 30px;
+                  width: 18vw;
+                  height: 31vw;"
+                  src="https://www.youtube.com/embed/yAFjRKdX5Io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              </div>
+            <!--  -->
+
+            <div class = "Project">
+              <div class="video-mask2">
+                  <iframe 
+                  style="border-radius: 30px;
+                  width: 30vw;
+                  height: 17vw;"
+                  src="https://www.youtube.com/embed/FmHuXZsef1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+              </div>
+  
+              <div class="Projects-Content">
+                <h1>  <img src="img/Instukly.png" width="60" style="vertical-align: middle"> Instrukly</h1>
+                <br><br>
+                <p>Instrukly is a light verison of Inspekly using the Lens in Snapchat. As my company is selected as one of the Snap's AR Innovation Lab Ghost’s partners, we can access the internal version of Lens Studio to create custom lens. 
+                </p>
+                <br>
+                <p>Instrukly takes use of the QR code scan in Snapchat to fetch the world coordinate system, which can be used to provide a guide through in an easy-to-use way. Here is a demo video on how to use a 3D printer in a local Primary school using the Instuckly. Developed in JavaScript with Lens Studio.
+                </p>
+                <br>
+                <ul class="availableIn">
+                  <li>
+                    <span>Available in:</span>
+                  </li>
+                  <li>
+                    <img
+                      src="img/Apple.png"
+                      width="35"
+                      style="vertical-align: middle"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="img/Android.png"
+                      width="35"
+                      style="vertical-align: middle"
+                    />
+                  </li>
+                </ul>
+              </div>
+              </div>
+
+
+            </div>
         </div>
       </div>
-
 
 
     </div>

@@ -113,7 +113,7 @@ p {
   color: #fdda0d !important;
 }
 #fp-nav ul li .fp-tooltip {
-  color: #5f5f5f !important;
+  color: #818181 !important;
 }
 
 /* Expanding border effect */
@@ -314,7 +314,8 @@ canvas {
 .arts {
   /* direction: ltr; */
   background: url("img/BG.png");
-  padding-top: 100px;
+  background-size: cover;
+  /* padding-top: 15vh; */
 }
 
 .grid-wrapper > div {
@@ -390,8 +391,8 @@ canvas {
 .MySlides {
   display: inline-block;
   width: auto;
-  height: 76vh;
-  padding: 0 10vw;
+  /* height: 76vh; */
+  padding: 0 20vh;
   font-size: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -405,7 +406,7 @@ canvas {
   vertical-align: top;
   font-size: 1.5vw;
   width: 25vw;
-  height: 40vw;
+  height: 36vw;
   
   margin: 0 1.333em;
   background: hsl(210, 23%, 8%);
@@ -425,7 +426,7 @@ canvas {
   height: 100%;
   position: absolute;
   border-radius: 12px;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: left;
 }
 
@@ -491,7 +492,7 @@ canvas {
 }
 
 .MySlide.focus {
-  width: 75vw;
+  width: 64vw;
   transition: 0.4s ease-out;
 }
 
@@ -623,6 +624,105 @@ canvas {
 }
 
 /* -------------------------------------------------------------------------------- */
+.Projects {
+  background: rgb(235, 235, 235);
+}
+
+.ProjectsHolder
+{
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+  /* border: 5px solid #333; */
+}
+
+.Projects-Content
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Projects-Content h1
+{
+  gap:10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top:2%;
+  padding-bottom: 2%;
+}
+.Project
+{
+  background-color: rgb(235, 235, 235);
+  box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+    6px 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+
+
+  display: flex;
+  width:80%;
+  justify-content: center;
+
+  transition: 0.4s ease-out;
+}
+
+.Project:hover {
+  transform: translateY(10px);
+  background-color: rgb(235, 235, 235);
+  border-radius: 60px;
+  box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.6),
+    inset 6px 6px 20px rgba(0, 0, 0, 0.075);
+
+  transition: 0.4s ease-out;
+}
+
+.video-mask1 {
+  /* padding-left: 5%; */
+  padding-right: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.video-mask2 {
+  padding-left: 5%;
+  /* padding-right: 5%; */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.availableIn {
+  align-items: flex-end;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: flex-end;
+  list-style: none;
+  padding-right: 12%;
+  overflow: hidden;
+  gap: 8px;
+
+  font-family: "Montserrat";
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 10px;
+  
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
 
 ::-webkit-scrollbar {
   height: 0px;
