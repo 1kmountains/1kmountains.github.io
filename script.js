@@ -44,11 +44,6 @@ window.addEventListener('resize', (event) => {
   p5jsWindowResized();
 })
 
-addEventListener('fullscreenchange', (event) => { 
-  MyWindowResized();
-  p5jsWindowResized();
-});
-
 
 function windowResized()
 {
@@ -194,7 +189,8 @@ window.addEventListener('load', function () {
 function MyWindowResized() {
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
-  particleDist = window.window.innerHeight / 180
+  
+  particleDist = window.innerHeight / 180  *  2
   adjustX = canvas.width / (particleDist * 2) - particleRefImgSize / 2
   adjustY = canvas.height / (particleDist * 2) - particleRefImgSize / 2
 
