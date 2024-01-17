@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8" />
     <title>1kmountains - portfolio</title>
@@ -10,6 +10,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="./style.css" />
 
     <!-- Font Style -->
@@ -21,6 +22,7 @@
           rel="stylesheet" />
 </head>
 
+
 <body>
     <!-- navbar header -->
     <div class="nav-header">
@@ -30,11 +32,30 @@
         <i class="fa fa-bars fa-3x"></i>
         <div class="header-links">
             <ul>
-                <li data-menuanchor="fifthPage"><a onclick="Show(5)">PROJECTS</a></li>
-                <li data-menuanchor="fourthPage"><a onclick="Show(4)">GAME JAM</a></li>
-                <li data-menuanchor="thirdPage"><a onclick="Show(3)">ARTS</a></li>
-                <li data-menuanchor="secondPage"><a onclick="Show(2)">ABOUT</a></li>
-                <li data-menuanchor="firstPage"><a onclick="Show(1)">HOME</a></li>
+                <li>
+                    <button onclick="ChangeLang()" lang="en">日本語</button>
+                    <button onclick="ChangeLang()" lang="jp">ENGLISH</button>
+                </li>
+                <li data-menuanchor="fifthPage">
+                    <a onclick="Show(5)" lang="en">PROJECTS</a>
+                    <a onclick="Show(5)" lang="jp">プロジェクト</a>
+                </li>
+                <li data-menuanchor="fourthPage">
+                    <a onclick="Show(4)" lang="en">GAME JAMS</a>
+                    <a onclick="Show(4)" lang="jp">ゲームジャム</a>
+                </li>
+                <li data-menuanchor="thirdPage">
+                    <a onclick="Show(3)" lang="en">ILLUSTRATIONS</a>
+                    <a onclick="Show(3)" lang="jp">イラスト</a>
+                </li>
+                <li data-menuanchor="secondPage">
+                    <a onclick="Show(2)" lang="en">ABOUT</a>
+                    <a onclick="Show(2)" lang="jp">自己紹介</a>
+                </li>
+                <li data-menuanchor="firstPage">
+                    <a onclick="Show(1)" lang="en">HOME</a>
+                    <a onclick="Show(1)" lang="jp">ホーム</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -46,60 +67,42 @@
             <canvas id="canvas"></canvas>
             <div id="particle-container" class="particle-class"></div>
             <div style="position: relative; text-align: center">
-                <h1 style="
-              position: fixed;
-              overflow: hidden;
-              font-family: 'Montserrat';
-              font-size: 35px;
-              font-weight: 400;
-              letter-spacing: 40px;
-              bottom: 25%;
-              left: 50%;
-              transform: translate(-50%, 0);
-              overflow: hidden;
-            ">
-                    LEUNG CHIN SEN
-                </h1>
+                <h1 class="fullName" lang="en">LEUNG CHIN SEN</h1>
+                <h1 class="fullName" lang="jp">りょう ちん せん</h1>
                 <br />
-                <h2 style="
-              position: fixed;
-              font-family: 'Montserrat';
-              font-size: 25px;
-              font-weight: 200;
-              letter-spacing: 15px;
-              bottom: 20%;
-              left: 50%;
-              transform: translate(-50%, 0);
-            ">
-                    1kmountains
-                </h2>
+                <h2 lang="en">Jason</h2>
+                <h2 lang="jp">ジェイソン</h2>
             </div>
         </div>
 
         <!-- begin section -->
         <div class="section aboutme" data-anchor="aboutme">
             <div class="aboutme">
-                <h1>ABOUT ME</h1>
-
+                <h1 lang="en">ABOUT ME</h1>
+                <h1 lang="jp">自己紹介</h1>
                 <br>
                 <ul class="reach-out">
                     <li>
                         <img src="img/Location.png"
                              width="35"
                              alt="Location icon"
-                             style="vertical-align: middle" /><span>Hong Kong SAR</span>
+                             style="vertical-align: middle" />
+                        <span lang="en">Tokyo/Hong Kong SAR</span>
+                        <span lang="jp">東京都板橋区/香港特別行政区</span>
                     </li>
                     <li>
                         <img src="img/Email.png"
                              width="35"
                              alt="Location icon"
-                             style="vertical-align: middle" /><span>mountains.1k@gmail.com</span>
+                             style="vertical-align: middle" />
+                        <span>mountains.1k@gmail.com</span>
                     </li>
                     <li>
                         <img src="img/Website.png"
                              width="35"
                              alt="Location icon"
-                             style="vertical-align: middle" /><span><a href="https://1kmountains.github.io/">1kmountains.github.io</a></span>
+                             style="vertical-align: middle" />
+                        <span><a href="https://1kmountains.github.io/">1kmountains.github.io</a></span>
                     </li>
                     <li>
                         <img src="img/Instagram.png"
@@ -112,15 +115,19 @@
                 </ul>
                 <br /><br />
 
-                <p>
-                    Hi, I am Jason! Welcome to my portfolio. <br />
-                </p>
+                <p lang="en">Hi, I am Jason. Welcome to my portfolio.</p>
+                <p lang="jp">はじめまして、ジェイソンと申しますともうします。私のポートフォリオへようこそ。</p>
                 <br />
-                <p>
-                    I'm a task-driven game developer with over 2 years solid working experience
-                    in Unity3D, developing inovative applications and games with the use
-                    of AR technology. With my passion in 2D illustrating, I also draw a
-                    lot for indie games.
+                <br />
+                <p lang="en">
+                    Task-driven game developer with over 3 years solid experience in Unity3D, developing inovative applications and games with the use of AR technology.
+                    <br>With my passion in 2D illustration, I also draw game arts and design the UIUX. Creating immersive and  fun gaming experience for users is my goal.
+                    <br><br>I have submitted an application for a Japan Working Holiday Visa in 2024, and I am eager to pursue professional opportunities in the country.
+                </p>
+                <p lang="jp">
+                    私はUnity3Dを使用したアプリ開発において3年以上の実務経験がございます。AR技術を活用した革新的なアプリやゲームを開発に携わって参りました。
+                    <br>また、2Dイラストへの情熱も持っており、ゲームアートの制作やUI/UXのデザインに携わっています。ユーザーに没入感と楽しさを提供することが私の目標です。
+                    <br><br>2024年に日本でワーキングホリデービザを申請し、こちらでの就業機会を探しております。
                 </p>
                 <br /><br />
                 <br /><br />
@@ -128,45 +135,57 @@
                     <div class="SkillSet">
                         <div class="CardContainer">
                             <div class="card">
-                                <h3 class="title">GAME JAMMER</h3>
+                                <h3 class="title" lang="en">GAME JAMMER</h3>
+                                <h3 class="title" lang="jp">ゲームジャマー</h3>
                                 <div>
                                     <img src="img/GameJam.png" />
                                 </div>
                                 <div>
-                                    <p>
+                                    <p lang="en">
                                         Participated over 10 game jams, designing unique game
                                         mechanizes and creating art assets
+                                    </p>
+                                    <p lang="jp">
+                                        10回以上のゲームジャムに参加しました。短期間でゲームメカニズムを設計し、そしてアートアセットを制作しました。
                                     </p>
                                 </div>
                             </div>
                             <div class="card">
-                                <h3 class="title">ARTIST</h3>
+                                <h3 class="title" lang="en">ILLUSTRATOR</h3>
+                                <h3 class="title" lang="jp">イラストレーター</h3>
                                 <div>
                                     <img src="img/Draw.png" />
                                 </div>
                                 <div>
-                                    <p>
+                                    <p lang="en">
                                         Can draw in Chinese painting, water color, oil color and
                                         digital
+                                    </p>
+                                    <p lang="jp">
+                                        中国画、油絵、水彩画、デジタル絵画など、さまざまな媒体で絵を描くことができます。
                                     </p>
                                 </div>
                             </div>
                             <div class="card">
-                                <h3 class="title">NEOPHILE</h3>
+                                <h3 class="title" lang="en">EXPLORE NEW TECH</h3>
+                                <h3 class="title" lang="jp">新技術を探求する</h3>
                                 <div>
                                     <img src="img/Neophile.png" />
                                 </div>
                                 <div>
-                                    <p>Experienced in AR, always trying new technologies</p>
+                                    <p lang="en">Experienced in AR, always trying new technologies</p>
+                                    <p lang="jp">ARの経験が豊富で、常に新しい技術に挑戦しています
                                 </div>
                             </div>
                             <div class="card">
-                                <h3 class="title">UNITY DEVELOPER</h3>
+                                <h3 class="title" lang="en">UNITY DEVELOPER</h3>
+                                <h3 class="title" lang="jp"> UNITY開発者</h3>
                                 <div>
                                     <img src="img/Unity.png" />
                                 </div>
                                 <div>
-                                    <p>Worked as a Unity developer for over 2 years</p>
+                                    <p lang="en">Worked as a Unity developer for over 3 years</p>
+                                    <p lang="jp">3年以上Unity開発者として働いていました</p>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +198,8 @@
         <!-- begin section -->
         <div class="section arts" data-anchor="arts">
             <div class="ArtSection" style="padding-top: 20vh;">
-                <h1 style="color: white">ARTS</h1>
+                <h1 style="color: white" lang="en">ILLUSTRATIONS</h1>
+                <h1 style="color: white" lang="jp">イラスト</h1>
                 <br>
                 <div class="grid-wrapper">
                     <div class="bigtall">
@@ -243,8 +263,12 @@
         </div>
 
         <div class="section GameJams" data-anchor="gamejams" style="overflow: hidden;">
-            <h1>Game Jams</h1><br>
-            <p>For the past three 2 years, I have participated in variety of game jams working as an illustrator/ graphic designer. Here are some of the works. Hover for more details, hit "Play" to play in browser at <a href="https://1kmountains.itch.io/">1kmountains.itch.io</a></p>
+            <h1 lang="en">Game Jams</h1>
+            <h1 lang="jp">ゲームジャム</h1>
+            <br>
+            <p lang="en">I have participated in variety of game jams working as an illustrator/ graphic designer. Here are some of my works. Hover for more details, hit "Play" to play in browser at <a href="https://1kmountains.itch.io/" style="color: #fdda0d">1kmountains.itch.io</a></p>
+            <p lang="jp">私はイラストレーター/グラフィックデザイナーとして、様々なゲームジャムに参加してきました。以下は私の作品の一部です。詳細についてはホバーしてください。「PLAY」をクリックして、<a href="https://1kmountains.itch.io/" style="color: #fdda0d">1kmountains.itch.io</a>でブラウザで遊んでください。</p>
+            <br>
             <div class="slidebuttons">
                 <div class="slidebutton_right" id="next"></div>
                 <div class="slidebutton_left" id="prev"></div>
@@ -270,7 +294,14 @@
                                     <div class="slideDescription">
                                         <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/necromancer-alone')">Play</button>
                                         <br><br>
-                                        Your grandma was dead in a witch-hunt, leaving you an ancient sorcerer book. But you are not alone! With the book, you can create your own friends to fight against the holy armies! What will you create? A three head monster?
+                                        <p class="noPadding" lang="en">
+                                            Your grandma was dead in a witch-hunt, leaving you an ancient sorcerer book. But you are not alone! With the book, you can create your own friends to fight against the holy armies! What will you create? A three head monster?
+                                        </p>
+                                        <p class="noPadding" lang="jp">
+                                            あなたのおばあちゃんは魔女狩りで亡くなり、あなたに古代の魔術書を残しました。
+                                            しかし、あなたは一人ではありません！
+                                            その魔術書をつかて、自分に仲間を作り出して、聖なる軍勢と戦うことができます！因みに、あなたは何を作成したいですか？三つ首のモンスターか？
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +320,15 @@
                                     <div class="slideDescription">
                                         <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/steamtown')">Play</button>
                                         <br><br>
-                                        A story-driven deck-building card game. Cards are generated randomly with different abilities. Players choose one side of the card to resolve while the opponent will resolve another side. Createing combos and limiting the damage taken are the key to success.
+                                        <p class="noPadding" lang="en">
+                                            A story-driven deck-building card game. Each card is divided into an upper and lower part, with each part representing a different action. Players can choose one action from the card, leaving the other action for the enemy to perform. Createing combos and limiting the damage taken are the key to success.
+                                        </p>
+                                        <p class="noPadding" lang="jp">
+                                            ストーリー重視のデッキ構築カードゲームです。
+                                            各カードは上下に分かれ、それぞれ異なるアクションを表します。
+                                            プレイヤーはカードの一方のアクションを選択し、相手はもう一方のアクションを実行します。
+                                            コンボを作成し、受けるダメージを制限することが成功の鍵です。
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +347,12 @@
                                     <div class="slideDescription">
                                         <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/ghostly-delivery')">Play</button>
                                         <br><br>
-                                        "Ghostly Delivery" is a RTS game that you need to control multiple ghost minions to deliver cargos to the city portal. We ranked at #146 out of #1888 entries (top 8%). As the artist of the game, I tried to use a pink-ish background to build up a delightful dreamy night city atmosphere.
+                                        <p class="noPadding" lang="en">
+                                            "Ghostly Delivery" is a RTS game that you need to control multiple ghost minions to deliver cargos to the city portal. We ranked at #146 out of #1888 entries (top 8%). As the artist of the game, I tried to use a pink-ish background to build up a delightful dreamy night city atmosphere.
+                                        </p>
+                                        <p class="noPadding" lang="jp">
+                                            「Ghostly Delivery」は、複数の幽霊手下を操作して、荷物を都市のポータルに配達するのRTSゲームです。私たちは、＃1888エントリー中＃146位にランクインしました（上位8％）。ゲームのアーティストとして、ピンク色の背景を使用して、楽しい夢のような夜の雰囲気を作り上げることを試みました。
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +371,13 @@
                                     <div class="slideDescription">
                                         <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/hungry-dice')">Play</button>
                                         <br><br>
-                                        "Hungry Dice" is a strategy game where players is a dice rolling on the board. Rolling onto the floor button to trigger attack action, the strength of the skill are depends on the value of the dice rolled facing down.
+                                        <p lang="en" class="noPadding">
+                                            "Hungry Dice" is a strategy board game where players control a dice that rolls on the board. The objective is to trigger an attack action by rolling onto the floor button, and the strength of the skill depends on the value of the dice rolled facing down.
+                                            . The game involves a mix of strategy and consideration, as players need to utilize the power of the dice to survive as long as possible
+                                        </p>
+                                        <p lang="jp" class="noPadding">
+                                            "Hungry Dice"は、プレイヤーがボード上を転がるサイコロを操作するストラテジーボードゲームです。攻撃アクションをトリガーすることが目標で、その強さは下になるサイコロの出目に依存します。ゲームは戦略と考慮の要素を組み合わせており、プレイヤーは可能な限り長く生き残るためにサイコロの力を利用する必要があります。
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -344,7 +394,12 @@
                                     <div class="slideDescription">
                                         <button type="button" class="slideLink" onclick="window.open('https://fhy.itch.io/morning-star')">Play</button>
                                         <br><br>
-                                        "Morning Star" is a puzzle game that players need to You are Lucifier, the morning star. You are going to flood the world with chaos.
+                                        <p class="noPadding" lang="en">
+                                            "Morning Star" is a puzzle game that players need to You are Lucifier, the morning star. You are going to flood the world with chaos.
+                                        </p>
+                                        <p class="noPadding" lang="jp">
+                                            パズルゲームです。Luciferであるあなたが世界を混沌に陥れろ！
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -365,23 +420,36 @@
 
         <div class="section Projects" data-anchor="Projects">
             <div class="ProjectsHolder">
-                <h1>Projects</h1><br>
-                <p>Here are the projects I have been participated in working as a Unity developer.</p>
-
+                <h1 lang="en">Projects</h1>
+                <h1 lang="jp">プロジェクト</h1>
+                <br>
+                <p lang="en">Here are the projects I have been participated in working as a Unity developer.</p>
+                <p lang="jp">
+                    こちらは私にUnity開発者として、携わってきたプロジェクトです。
+                </p>
+                </p>
                 <!--  -->
                 <div class="Project">
                     <div class="Projects-Content">
                         <h1> <img src="img/inspekly-editor-icon.png" width="60" style="vertical-align: middle"> Inspekly Editor</h1>
                         <br><br>
-                        <p> Inspekly is a project to transform workforces with digital checklists, powered with augmented reality guidance and an in-door tagging system. I am in charge of creating an editor for visualising the area target, creating items and packing the data as a json file to upload.</p>
+                        <p lang="en"> Inspekly is a project to transform workforces with digital checklists, powered with augmented reality guidance and an in-door tagging system. I am in charge of creating an editor for visualising the area target, creating items and packing the data as a json file to upload.</plang>
+                        <p lang="jp"> Inspeklyは、拡張現実指示とタグシステムを使用して、労働力を変革するプロジェクトです。私は、エリアターゲットの視覚化、アイテムの作成、データをJSONファイルとしてアップロードするためのエディターを作成する責任を持っています。</p>
                         <br>
-                        <p>To enhance the user experience, UIUX are refined and implemented in the project, such as Undo system, multiselection system, dynamic dropdown, etc. The project can be used on iOS, Android, PC and Win. </p>
+                        <p lang="en">
+                            To enhance the user experience, UIUX are refined and implemented in the project, such as Undo system, multiselection system, dynamic dropdown, etc. The project can be used on iOS, Android, PC and Win.
+                        </p>
+                        <p lang="jp">
+                            UIUXはプロジェクトに洗練と実装されています。例えば、UNDOシステム、複数選択システム、DYNAMIC DROPDOWNなどがあります。
+                        </p>
                         <br>
-                        <p> Find out more on <a href="https://www.inspekly.com/">www.inspekly.com</a>.</p>
+                        <p lang="en"> Find out more on <a href="https://www.inspekly.com/">www.inspekly.com</a>.</p>
+                        <p lang="jp">Inspeklyの詳細については、<a href="https://www.inspekly.com/">www.inspekly.com</a>で確認してください。</p>
+                        <br>
                         <br>
                         <ul class="availableIn">
                             <li>
-                                <span>Available in:</span>
+                                <span lang="en">Available in:</span>
                             </li>
                             <li>
                                 <img src="img/Apple.png"
@@ -398,6 +466,10 @@
                                      width="35"
                                      style="vertical-align: middle" />
                             </li>
+                            <li>
+                                <span lang="jp">で利用可能です。</span>
+                            </li>
+
                         </ul>
                     </div>
                     <div class="video-mask1">
@@ -421,13 +493,19 @@
                     <div class="Projects-Content">
                         <h1>  <img src="img/FidelidadeARIcon.png" width="60" style="vertical-align: middle"> Fidelidade AR</h1>
                         <br><br>
-                        <p>Fidelidade in Portugal is an insurance company that has recently trained an AI model to detect car damage for an insurance claim. For an accurate result of the AI detection, they need a solution to ensure the user can take a full 360 view of the car following regulations to prevent frauds.</p>
+                        <p lang="en">Fidelidade in Portugal is an insurance company that has recently trained an AI model to detect car damage for an insurance claim. For an accurate result of the AI detection, they need a solution to ensure the user can take a full 360 view of the car following regulations to prevent frauds.</p>
+                        <p lang="jp">ポルトガルのFidelidadeは保険請求のために車両の損傷を検出するためのAIモデルを開発しました。AI検出の正確な結果を得るためには、ユーザーが詐欺を防ぐための規制に従い、車両の360度の全景を撮影できるアプリが開発したいです。</p>
                         <br>
-                        <p>Hence, we leverage the AR technology to create a walkthrough for video taking. The project was created in Unity using ARFoundation, built as an SDK plugin for their application. During the walkthrough, distance between the car and the user, camera angle, camera movement are constantly tracked. Unuseful clips will also be trimmed out in real time.  </p>
-                        <br>
+                        <p lang="en">Hence, we leverage the AR technology to create a walkthrough for video taking. The project was created in Unity using ARFoundation, built as an SDK plugin for their application. During the walkthrough, distance between the car and the user, camera angle, camera movement are constantly tracked. Unuseful clips will also be trimmed out in real time.  </p>
+                        <p lang="jp">
+                            AR技術を活用して、指示を出すながらビデオ撮影のためのウォークスルーを作成しました。
+                            ウォークスルー中には、車両とユーザーの間の距離、カメラの角度、カメラの動きが常に追跡されます。また、無用なクリップはリアルタイムでトリミングされます。
+                            このプロジェクトは、UnityでARFoundationを使用して作成され、彼らのアプリケーション用のSDKプラグインとして構築されました。
+                        </p>
+                        <br><br>
                         <ul class="availableIn">
                             <li>
-                                <span>Available in:</span>
+                                <span lang="en">Available in:</span>
                             </li>
                             <li>
                                 <img src="img/Apple.png"
@@ -438,6 +516,9 @@
                                 <img src="img/Android.png"
                                      width="35"
                                      style="vertical-align: middle" />
+                            </li>
+                            <li>
+                                <span lang="jp">で利用可能です。</span>
                             </li>
                         </ul>
                     </div>
@@ -448,15 +529,18 @@
                     <div class="Projects-Content">
                         <h1>  <img src="img/TheFourLittlePigs.png" width="60" style="vertical-align: middle"> The Four Little Pigs</h1>
                         <br><br>
-                        <p>Inspired by the fairy tale "The Three Little Pigs", "The Four Little Pigs" is an asymmetrical multiplayer mobile game I worked for my Final Year Project at 2020. Players have to correctly identify the wolf in disguise before they all get eaten. </p>
+                        <p lang="en">Inspired by the fairy tale "The Three Little Pigs", "The Four Little Pigs" is an asymmetrical multiplayer mobile game I worked for my Final Year Project at 2020. Players have to correctly identify the wolf in disguise before they all get eaten. </p>
+                        <p lang="jp">"三匹の子豚"のおとぎ話に触発され、私は2020年の卒業プロジェクトとして非対称のマルチプレイ・モバイルゲーム"四匹の子豚"を制作しました。プレイヤーは、全員が食べられる前に変装したオオカミを正しく特定しなければなりません。</p>
                         <br>
-                        <p>Pigs are required to build a house for the night, and a rocket to escape. Meanwhile the wolf will need to hunt them down one by one secretly. I am in charge of the gameplay programming, 3D modeling, and UIUX design. </p>
+                        <p lang="en">Pigs are required to build a house for the night, and a rocket to escape. Meanwhile the wolf will need to hunt them down one by one secretly. I am in charge of the game design, programming, 3D modeling, and UIUX design. </p>
+                        <p lang="jp">子豚たちは夜を乗り越えのための家と、脱出のためのロケットを建てる必要があります。一方、オオカミは密かに一匹ずつ彼らを追い詰める必要があります。私はゲームデザイン、プログラミング、3Dモデリング、UIUXデザインを担当しました。</p>
                         <br>
-                        <p>Feel free to visit <a href="https://jasonleung2468.wixsite.com/19-20fyp">my FYP Blog</a> for the process of creation.</p>
-                        <br>
+                        <p lang="en">Feel free to visit <a href="https://jasonleung2468.wixsite.com/19-20fyp">my FYP Blog</a> for the process of creation.</p>
+                        <p lang="jp">制作過程については、私の<a href="https://jasonleung2468.wixsite.com/19-20fyp">FYPブログ</a> をご覧ください。</p>
+                        <br><br>
                         <ul class="availableIn">
                             <li>
-                                <span>Available in:</span>
+                                <span lang="en">Available in:</span>
                             </li>
                             <li>
                                 <img src="img/Apple.png"
@@ -467,6 +551,9 @@
                                 <img src="img/Android.png"
                                      width="35"
                                      style="vertical-align: middle" />
+                            </li>
+                            <li>
+                                <span lang="jp">で利用可能です。</span>
                             </li>
                         </ul>
                     </div>
@@ -491,17 +578,23 @@
                     <div class="Projects-Content">
                         <h1>  <img src="img/Instukly.png" width="60" style="vertical-align: middle"> Instrukly</h1>
                         <br><br>
-                        <p>
+                        <p lang="en">
                             Instrukly is a light verison of Inspekly using the Lens in Snapchat. As my company is selected as one of the Snap's AR Innovation Lab Ghost’s partners, we can access the internal version of Lens Studio to create custom lens.
                         </p>
-                        <br>
-                        <p>
-                            Instrukly takes use of the QR code scan in Snapchat to fetch the world coordinate system, which can be used to provide a guide through in an easy-to-use way. Here is a demo video on how to use a 3D printer in a local Primary school using the Instuckly. Developed in JavaScript with Lens Studio.
+                        <p lang="jp">
+                            Instruklyは、Inspeklyの軽量版で、SnapChatのレンズを使用しています。私の会社がSnap's AR Innovation Lab Ghost’s のパートナーとして選ばれたため、私たちはLens Studioの内部版を使用してカスタムレンズを作成することができます。
                         </p>
                         <br>
+                        <p lang="en">
+                            Instrukly takes use of the QR code scan in Snapchat to fetch the world coordinate system, which can be used to provide a guide through in an easy-to-use way. Here is a demo video on how to use a 3D printer in a local Primary school using the Instuckly. Developed in JavaScript with Lens Studio.
+                        </p>
+                        <p lang="jp">
+                            QRコード読み取りで座標を取得し、AR指示を提供することができます。このビデオは小学校で3Dプリンターを使用する方法のデモ動画があります。
+                        </p>
+                        <br><br>
                         <ul class="availableIn">
                             <li>
-                                <span>Available in:</span>
+                                <span lang="en">Available in:</span>
                             </li>
                             <li>
                                 <img src="img/Apple.png"
@@ -513,6 +606,9 @@
                                      width="35"
                                      style="vertical-align: middle" />
                             </li>
+                            <li>
+                                <span lang="jp">で利用可能です。</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -522,8 +618,6 @@
         </div>
     </div>
 
-
-    </div>
     <!-- end fullpage -->
 
     <div id="absCanvas" style="
@@ -536,6 +630,9 @@
       left: 0;
       pointer-events: none;
       ">
+    </div>
+    <div class="loading-page">
+        <lottie-player class="lottieplayer" src="https://lottie.host/bbf77be3-dbcd-4856-8747-0e0b479aea44/JYwiK8AoyI.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>>
     </div>
 
     <!-- Mouse -->
