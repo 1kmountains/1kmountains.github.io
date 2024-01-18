@@ -166,7 +166,8 @@ svg rect {
     }
 
     .header-links a {
-        color: #757575;
+        font-weight: 400;
+        color: #949494;
         text-decoration: none;
         font-family: "Montserrat";
         -webkit-transition: all 0.2s ease-in;
@@ -184,8 +185,9 @@ svg rect {
         background-color: transparent;
         background-repeat: no-repeat;
         border: none;
-        color: #757575;
+        color: #949494;
         text-decoration: none;
+        font-weight: 400;
         font-family: "Montserrat";
         -webkit-transition: all 0.2s ease-in;
     }
