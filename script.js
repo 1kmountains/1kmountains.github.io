@@ -343,7 +343,13 @@ var Show = function (elID) {
     //fullpage_api.responsiveSlides.toSlides();
 }
 
-$('[lang="jp"]').hide();
+var userLang = navigator.language || navigator.userLanguage;
+if (userLang.includes("ja")) {
+    $('[lang="en"]').hide();
+} else {
+    $('[lang="jp"]').hide();
+}
+
 var ChangeLang = function () {
     $('[lang="jp"]').toggle();
     $('[lang="en"]').toggle();
